@@ -1,0 +1,20 @@
+{
+  "name": "projeto",
+  "version": "1.0.0",
+  "description": "Projeto acadêmico de um site para uma instituição social. O objetivo é apresentar a instituição, divulgar seus projetos e disponibilizar um formulário para pessoas interessadas em participar.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && node minificar-html.mjs",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "html-minifier-terser": "^7.2.0",
+    "sharp": "^0.35.5",
+    "vite": "^8.3.1"
+  }
+}

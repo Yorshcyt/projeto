@@ -1,5 +1,5 @@
 // Mantém apenas números e acrescenta a pontuação aos poucos.
-function formatarCPF(valor) {
+export function formatarCPF(valor) {
     return valor.replace(/\D/g, '').slice(0, 11)
         .replace(/^(\d{3})(\d)/, '$1.$2')
         .replace(/^(\d{3}\.\d{3})(\d)/, '$1.$2')
@@ -7,7 +7,7 @@ function formatarCPF(valor) {
 }
 
 // Formato de celular já usado no formulário: DDD e nove dígitos.
-function formatarTelefone(valor) {
+export function formatarTelefone(valor) {
     const numeros = valor.replace(/\D/g, '').slice(0, 11);
     if (!numeros) return '';
     if (numeros.length <= 2) return '(' + numeros;
@@ -15,12 +15,12 @@ function formatarTelefone(valor) {
         .replace(/^(\d{5})(\d)/, '$1-$2');
 }
 
-function formatarCEP(valor) {
+export function formatarCEP(valor) {
     return valor.replace(/\D/g, '').slice(0, 8)
         .replace(/^(\d{5})(\d)/, '$1-$2');
 }
 
-function aplicarMascara(campo) {
+export function aplicarMascara(campo) {
     if (campo.id !== 'cpf' && campo.id !== 'telefone' && campo.id !== 'cep') return;
     // Conta os números antes do cursor para permitir editar no meio do campo.
     const cursor = campo.selectionStart;

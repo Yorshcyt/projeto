@@ -1,7 +1,8 @@
+import { formatarCPF, formatarTelefone, formatarCEP } from './mascaras.js';
 // Guarda um único preenchimento do cadastro neste navegador.
 const chaveCadastro = 'instituto-cadastro';
 
-function salvarCadastro(formulario) {
+export function salvarCadastro(formulario) {
     const dados = {};
     formulario.querySelectorAll('input').forEach(function (campo) {
         dados[campo.name] = campo.value;
@@ -14,7 +15,7 @@ function salvarCadastro(formulario) {
     }
 }
 
-function recuperarCadastro(formulario) {
+export function recuperarCadastro(formulario) {
     try {
         const texto = localStorage.getItem(chaveCadastro);
         if (!texto) return;

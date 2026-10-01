@@ -1,3 +1,5 @@
+import { montarCards } from './templates.js';
+import { recuperarCadastro } from './armazenamento.js';
 // Navegação por hash: troca o conteúdo sem recarregar o documento.
 const conteudo = document.querySelector('#conteudo');
 const titulos = {
@@ -6,7 +8,7 @@ const titulos = {
     cadastro: 'Cadastro de voluntário'
 };
 
-function mostrarPagina(moverFoco = true) {
+export function mostrarPagina(moverFoco = true) {
     let paginaInicial = 'inicio';
     if (location.pathname.endsWith('/projetos.html')) paginaInicial = 'projetos';
     if (location.pathname.endsWith('/cadastro.html')) paginaInicial = 'cadastro';

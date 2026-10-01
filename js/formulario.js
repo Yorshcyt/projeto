@@ -1,3 +1,5 @@
+import { aplicarMascara } from './mascaras.js';
+import { salvarCadastro } from './armazenamento.js';
 // Eventos delegados: funcionam mesmo após a SPA recriar o formulário.
 function conferirCampo(campo) {
     const valido = campo.validity.valid;
