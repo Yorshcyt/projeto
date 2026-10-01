@@ -1,5 +1,5 @@
 // Dados usados para preencher os cards de projetos.
-const projetos = [
+export const projetos = [
     {
         "id": "alimentos",
         "titulo": "Campanha de alimentos",

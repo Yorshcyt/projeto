@@ -6,7 +6,7 @@ Projeto acadêmico de um site para uma instituição social. O objetivo é apres
 
 - **HTML:** estrutura das páginas, formulário e templates.
 - **CSS:** cores, tipografia, layout responsivo e estados visuais dos componentes.
-- **JavaScript:** navegação entre conteúdos, criação dos cards, validação do formulário, máscaras de preenchimento, modal e toast.
+- **JavaScript:** navegação entre conteúdos, criação dos cards, validação do formulário, máscaras de preenchimento, modal, toast e alternância de alto contraste.
 
 ## Organização dos arquivos
 
@@ -32,8 +32,27 @@ O projeto não precisa de instalação de dependências ou comando de build. Tam
 - Formatação automática de CPF, telefone e CEP.
 - Salvamento e recuperação do rascunho do formulário com localStorage.
 - Modal e toast para comunicação com o usuário.
+- Modo de alto contraste com preferência salva no navegador.
 
 O cadastro é uma demonstração: os dados ficam no navegador e não são enviados para um servidor. A máscara do CPF organiza o preenchimento, mas não verifica os dígitos verificadores.
+
+## Acessibilidade e alto contraste
+
+O site utiliza tags semânticas, labels associados aos campos, mensagens de erro com atributos ARIA, foco visível e um link para pular ao conteúdo principal. O modal permite fechar com Esc e retornar ao botão que o abriu.
+
+O botão **Alto contraste**, disponível no cabeçalho, ativa ou desativa a classe `alto-contraste` no body. O CSS aplica fundo preto, texto branco e títulos, links e botões amarelos. O script `js/contraste.js` atualiza `aria-pressed` e salva a preferência no localStorage.
+
+As combinações de cores foram verificadas com um script de cálculo de contraste pela fórmula WCAG:
+
+| Elemento no alto contraste | Cor do texto | Cor do fundo | Contraste |
+|---|---|---|---|
+| Texto e campos | `#ffffff` | `#000000` | 21:1 |
+| Links e títulos | `#ffff00` | `#000000` | 19,56:1 |
+| Botões | `#000000` | `#ffff00` | 19,56:1 |
+| Mensagens de erro | `#ffb3b3` | `#000000` | 12,35:1 |
+| Badge de sucesso | `#00ff00` | `#000000` | 15,30:1 |
+
+Os valores correspondem às cores definidas no CSS e não representam uma auditoria completa de conformidade WCAG. Mais detalhes estão em `VERIFICACAO-CONTRASTE.md`.
 
 ## Versionamento
 
@@ -60,5 +79,8 @@ Para verificar o funcionamento:
 6. Abra o modal, confira a navegação interna e feche com Esc.
 7. Mostre o toast e acesse seu botão de fechar pelo teclado.
 8. Confira o layout em telas menores.
+9. Ative e desative Alto contraste com o mouse e com Enter ou Espaço.
+10. Confira os campos, mensagens de erro, modal e toast nos dois modos.
+11. Recarregue a página para verificar se a preferência de contraste foi mantida.
 
 Não há uma ferramenta de testes automatizados configurada. As verificações de interface são realizadas no navegador.

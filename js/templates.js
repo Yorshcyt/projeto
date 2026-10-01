@@ -1,5 +1,6 @@
+import { projetos } from './projetos.js';
 // Cria os cards a partir do modelo HTML e dos dados dos projetos.
-function montarCards() {
+export function montarCards() {
     const lista = document.querySelector('#lista-projetos');
     const modelo = document.querySelector('#modelo-card');
     projetos.forEach(function (projeto) {

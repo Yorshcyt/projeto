@@ -567,3 +567,59 @@ a:focus-visible, button:focus-visible, input:focus-visible {
     #menu-toggle { display: block; }
 }
 .modal::backdrop { background-color: rgba(0, 0, 0, 0.4); }
+
+/* Controle de contraste e cores dos campos no modo padrão. */
+.flex-header { flex-wrap: wrap; gap: var(--espaco-2); }
+.botao-contraste { border: 2px solid var(--cor-primaria); }
+a { color: var(--cor-primaria); }
+.flex-form input { color: var(--cor-texto); background-color: var(--cor-branca); }
+.flex-form input::placeholder { color: var(--cor-texto-secundario); opacity: 1; }
+.modal { color: var(--cor-texto); }
+.toast button:focus-visible { outline-color: #ffffff; }
+
+/* A classe troca as cores sem alterar a estrutura da página. */
+body.alto-contraste {
+    color-scheme: dark;
+    --cor-primaria: #ffff00;
+    --cor-secundaria: #ffff00;
+    --cor-destaque: #ffff00;
+    --cor-escura: #000000;
+    --cor-branca: #000000;
+    --cor-fundo: #000000;
+    --cor-texto: #ffffff;
+    --cor-texto-secundario: #ffffff;
+    --cor-sucesso: #00ff00;
+    --cor-erro: #ffb3b3;
+    --cor-info: #ffff00;
+    --fundo-sucesso: #000000;
+    --fundo-erro: #000000;
+    --fundo-info: #000000;
+}
+.alto-contraste .card,
+.alto-contraste .flex-form,
+.alto-contraste .modal,
+.alto-contraste .toast,
+.alto-contraste .submenu,
+.alto-contraste .flex-menu,
+.alto-contraste .badge,
+.alto-contraste .alert { border: 2px solid #ffffff; }
+.alto-contraste .flex-header,
+.alto-contraste .flex-footer { border-bottom: 2px solid #ffffff; }
+.alto-contraste .flex-footer,
+.alto-contraste .toast { color: #ffffff; }
+.alto-contraste .badge-voluntario { background-color: #000000; }
+.alto-contraste .botao,
+.alto-contraste .flex-form button,
+.alto-contraste .modal button,
+.alto-contraste .pular-conteudo { background-color: #ffff00; color: #000000; border: 2px solid #ffff00; }
+.alto-contraste .botao:hover,
+.alto-contraste .flex-form button:hover,
+.alto-contraste .modal button:hover,
+.alto-contraste .botao:active,
+.alto-contraste .flex-form button:active,
+.alto-contraste .modal button:active { background-color: #ffffff; color: #000000; }
+.alto-contraste button:disabled { background-color: #ffffff; color: #000000; }
+.alto-contraste a { text-decoration: underline; }
+.alto-contraste .toast a { color: #ffff00; }
+.alto-contraste .toast button:focus-visible { outline-color: #ffff00; }
+.alto-contraste .logo { background-color: transparent; }
