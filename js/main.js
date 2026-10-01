@@ -1,3 +1,3 @@
-// Inicia a aplicação depois que os demais scripts foram carregados.
-window.addEventListener('hashchange', mostrarPagina);
-mostrarPagina();
+// A abertura inicial mantém o foco na ordem natural da página.
+window.addEventListener('hashchange', function () { mostrarPagina(); });
+mostrarPagina(false);
