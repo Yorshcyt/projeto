@@ -6,7 +6,7 @@ const titulos = {
     cadastro: 'Cadastro de voluntário'
 };
 
-function mostrarPagina() {
+function mostrarPagina(moverFoco = true) {
     let paginaInicial = 'inicio';
     if (location.pathname.endsWith('/projetos.html')) paginaInicial = 'projetos';
     if (location.pathname.endsWith('/cadastro.html')) paginaInicial = 'cadastro';
@@ -36,12 +36,21 @@ function mostrarPagina() {
     const secao = partes[1] ? document.getElementById(partes[1]) : null;
     const destino = secao && conteudo.contains(secao) ? secao : conteudo;
     destino.setAttribute('tabindex', '-1');
-    destino.focus({ preventScroll: true });
-    destino.scrollIntoView();
+    if (moverFoco) {
+        destino.focus({ preventScroll: true });
+        destino.scrollIntoView();
+    }
 }
 
 // Um único evento continua funcionando após trocar os templates.
 document.addEventListener('click', function (evento) {
+    const atalho = evento.target.closest('.pular-conteudo');
+    if (atalho) {
+        evento.preventDefault();
+        conteudo.focus();
+        conteudo.scrollIntoView();
+        return;
+    }
     const link = evento.target.closest('.flex-menu a');
     if (link && !evento.ctrlKey && !evento.metaKey && !evento.shiftKey && !evento.altKey) {
         evento.preventDefault();
