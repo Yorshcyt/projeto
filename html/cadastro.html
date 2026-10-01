@@ -8,7 +8,11 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
-<body>
+<body><a class="pular-conteudo" href="#conteudo">
+    Pular para o conteúdo
+</a>
+    
+
 
     <header class="flex-header">
         <div class="marca"><img src="../imagens/logo.png" alt="" class="logo" width="48" height="48"><h1>Instituto Esperança</h1>
@@ -32,7 +36,7 @@
         </nav>
     </header>
 
-    <main class="grid-container" id="conteudo">
+    <main class="grid-container" id="conteudo" tabindex="-1">
 
         <p class="col-12">Carregando conteúdo...</p></main>
 
@@ -97,19 +101,17 @@
             <div class="modal-area">
                 <button type="button" class="botao" data-acao="abrir-modal">Abrir exemplo de modal</button>
                 <button type="button" class="botao" data-acao="mostrar-toast">Mostrar exemplo de toast</button>
-                <div class="modal-fundo" id="modal">
-                <div class="modal" role="dialog" aria-labelledby="titulo-modal">
+                <dialog class="modal" aria-labelledby="titulo-modal" id="modal" aria-modal="true">
                     <h3 id="titulo-modal">Exemplo de modal</h3>
                     <p>Obrigado por conhecer o Instituto Esperança.</p>
-                    <button type="button" class="botao" data-acao="fechar-feedback">Fechar</button>
+                    <button type="button" class="botao" data-acao="fechar-modal" autofocus="autofocus">Fechar</button>
+                </dialog>
                 </div>
-                </div>
-            </div>
         </section>
 
         <div class="toast" id="toast" role="status">
             ✓ Exemplo visual de toast: ação realizada com sucesso!
-            <button type="button" class="botao" data-acao="fechar-feedback">Fechar</button>
+            <button type="button" class="botao" data-acao="fechar-toast">Fechar</button>
         </div>
 
     </template><template id="pagina-projetos"><div id="lista-projetos" class="col-12 grid-projetos"></div><section class="col-12 card">
@@ -177,6 +179,6 @@
         <p>© 2026 Instituto Esperança</p>
     </footer>
 
-    <template id="modelo-card"><section class="col-6 card"><h2 class="titulo-card"></h2><article><h3 class="subtitulo-card"></h3><p class="descricao-card"></p></article></section></template><script src="../js/projetos.js" defer></script><script src="../js/templates.js" defer></script><script src="../js/mascaras.js" defer></script><script src="../js/armazenamento.js" defer></script><script src="../js/formulario.js" defer></script><script src="../js/feedback.js" defer></script><script src="../js/navegacao.js" defer></script><script src="../js/main.js" defer></script></body>
+    <template id="modelo-card"><section class="col-6 card"><h2 class="titulo-card"></h2><article><h3 class="subtitulo-card"></h3><p class="descricao-card"></p></article></section></template><script src="../js/projetos.js" defer></script><script src="../js/templates.js" defer></script><script src="../js/mascaras.js" defer></script><script src="../js/armazenamento.js" defer></script><script src="../js/formulario.js" defer></script><script src="../js/feedback.js" defer></script><script src="../js/navegacao.js" defer></script><script src="../js/main.js" defer></script>
 
-</html>
+</body></html>

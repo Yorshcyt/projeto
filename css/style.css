@@ -222,6 +222,7 @@ a {
 
 /* HAMBÚRGUER */
 #menu-toggle {
+    display: none;
     position: absolute;
     opacity: 0;
     pointer-events: none;
@@ -544,3 +545,25 @@ a:focus-visible, button:focus-visible, input:focus-visible {
     object-fit: contain;
     margin: 0;
 }
+
+.pular-conteudo {
+    position: fixed;
+    top: 8px;
+    left: 8px;
+    transform: translateY(-200%);
+    background-color: var(--cor-primaria);
+    color: var(--cor-branca);
+    padding: 12px 16px;
+    border-radius: 4px;
+    z-index: 200;
+}
+
+.pular-conteudo:focus {
+    transform: translateY(0);
+}
+
+/* Checkbox acessível por teclado apenas no menu móvel. */
+@media (max-width: 768px) {
+    #menu-toggle { display: block; }
+}
+.modal::backdrop { background-color: rgba(0, 0, 0, 0.4); }
